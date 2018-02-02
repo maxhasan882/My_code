@@ -1,0 +1,13 @@
+import base64
+
+with open("F:\\tt.JPG", "rb") as imageFile:
+    str = base64.b64encode(imageFile.read())
+    f = open('F:\\test1.txt', 'wb')
+    f.write(str)
+    f.close()
+    g = open("F:\\test1.txt", 'rb')
+    string = g.read()
+    convert = base64.b64decode(string)
+    t = open("F:\\tt1.JPG", "wb")
+    t.write(convert)
+    t.close()
